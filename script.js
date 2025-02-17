@@ -7,6 +7,13 @@ let isPaused = false;
 let interval;
 let cursor = null;
 
+function adjustBodyHeight() {
+  document.body.style.height = `${window.innerHeight}px`;
+}
+
+window.addEventListener('resize', adjustBodyHeight);
+adjustBodyHeight();
+
 function isMobile() {
   return window.innerWidth < 768;
 }
