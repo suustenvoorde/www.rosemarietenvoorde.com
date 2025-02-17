@@ -7,6 +7,10 @@ let isPaused = false;
 let interval;
 let cursor = null;
 
+document.addEventListener('dblclick', function(event) {
+  event.preventDefault(); // Voorkomt het inzoomen bij dubbelklikken
+});
+
 function adjustBodyHeight() {
   document.body.style.height = `${window.innerHeight}px`;
 }
