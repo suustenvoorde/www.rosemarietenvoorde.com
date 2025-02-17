@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: .75em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1, a, p, span {
+  font-family: "Inter", serif;
+  text-transform: uppercase;
+  color: black;
+  font-size: 14px;
+  letter-spacing: 4%;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+h1 {
+  float: left;
+  margin: 0;
+}
+
+nav {
+  float: right;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+footer a {
+  display: none;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer button {
+  text-transform: uppercase;
+}
+
+footer button {
+  display: flex;
+  align-items: center;
+
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  height: 9.25px;
+
+  border-color: transparent transparent transparent #202020;
+  cursor: pointer;
+
+  border-style: double;
+  border-width: 0px 0 0px 7.5px;
+
+  &.paused {
+    border-style: solid;
+    border-width: 4.625px 0 4.625px 10px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  footer a {
+    display: inline;
+  }
+
+  footer p {
+    display: none;
+  }
+}
+
+.custom-cursor {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 14px;
+    font-family: "Inter", sans-serif;
+    padding: 5px 10px;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.2s;
+  }
+
+  .custom-cursor.left::before {
+    content: "← ";
+  }
+
+  .custom-cursor.right::after {
+    content: " →";
+  }
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  scrollbar-width: none;
+  padding: .75em 0;
+  scroll-snap-type: x mandatory;
+  /* scroll-behavior: smooth; Niet nodig voor scroll-snap, maar handig voor JS straks */
+}
+
+.gallery .slide {
+  flex: calc(100vw - 1.5em) 1 0; 
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+.gallery .slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
