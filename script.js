@@ -38,7 +38,7 @@ function prevSlide() {
 
 function updateSlider() {
   slides.forEach((slide, index) => {
-    slide.style.display = index === currentIndex ? "block" : "none";
+    slide.style.display = index === currentIndex ? "flex" : "none";
   });
 
   counter.textContent = `${currentIndex + 1}/${slides.length}`;
@@ -75,7 +75,7 @@ function createCursor() {
 
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", () => cursor.style.display = "none");
-    document.addEventListener("mouseenter", () => cursor.style.display = "block");
+    document.addEventListener("mouseenter", () => cursor.style.display = "flex");
   }
 }
 
