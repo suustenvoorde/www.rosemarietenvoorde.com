@@ -123,6 +123,7 @@ footer button {
   scrollbar-width: none;
   padding: .75em 0;
   scroll-snap-type: x mandatory;
+  height: 100%;
   /* scroll-behavior: smooth; Niet nodig voor scroll-snap, maar handig voor JS straks */
 }
 
@@ -130,18 +131,19 @@ footer button {
   flex: calc(100vw - 1.5em) 1 0; 
   height: 100%;
   scroll-snap-align: center;
-  display: flex;
-  justify-content: center;
-}
-
-.gallery .slide:has(img + img) img{
-  height: calc(100%);
-  width: calc(100% / 2 - 12px); 
 }
 
 .gallery .slide:has(img + img) {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+
+.gallery .slide:has(img + img) img {
+  height: calc(100% / 2);
+  width: auto;
 }
 
 .gallery .slide:has(img + img) img:first-of-type {
@@ -153,10 +155,15 @@ footer button {
     flex-direction: row;
   }
 
+  .gallery .slide:has(img + img) img {
+    height: calc(100%);
+    max-width: calc(100% / 2 - 12px); 
+    width: auto;
+  }
+
   .gallery .slide:has(img + img) img:first-of-type {
     margin-right: 12px;
     margin-bottom: 0px;
-
   }
 }
 
