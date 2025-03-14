@@ -40,3 +40,8 @@ h1, a, p, span {
 .content p {
   max-width: 30rem;
 }
+
+a:hover {
+  background-color: white;
+  color: black;
+}
