@@ -42,6 +42,10 @@ h1, a, p, span {
   margin: 0;
 }
 
+.content p:nth-of-type(3), .content a  {
+  margin-top: 1rem;
+}
+
 a:hover {
   background-color: white;
   color: black;
